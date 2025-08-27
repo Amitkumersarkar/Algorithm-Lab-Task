@@ -20,26 +20,20 @@ int partitionFor(int A[], int l, int h)
     return i - 1;
 }
 
-void quickSortFor(int A[], int l, int h)
+void quickSortWhileLoop(int A[], int l, int h)
 {
     if (l < h)
     {
         int pi = partitionFor(A, l, h);
-        quickSortFor(A, l, pi - 1);
-        quickSortFor(A, pi + 1, h);
+        quickSortWhileLoop(A, l, pi - 1);
+        quickSortWhileLoop(A, pi + 1, h);
     }
 }
 int main()
 {
     int A[] = {12, 9, 7, 3, 1, 5};
     int n = sizeof(A) / sizeof(A[0]);
-
-    // Try different quicksort versions:
-    quickSortFor(A, 0, n - 1);
-    // quickSortWhile(arr, 0, n - 1);
-    // quickSortDoWhile(arr, 0, n - 1);
-    // quickSortLast(arr, 0, n - 1);
-
+    quickSortWhileLoop(A, 0, n - 1);
     printf("Quick Sorted Array: ");
     for (int i = 0; i < n; i++)
         printf("%d ", A[i]);
