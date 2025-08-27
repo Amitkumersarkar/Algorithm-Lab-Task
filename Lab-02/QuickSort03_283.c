@@ -34,8 +34,6 @@ int main()
     int A[] = {12, 9, 7, 3, 1, 5};
     int n = sizeof(A) / sizeof(A[0]);
     quickSortDoWhileLoop(A, 0, n - 1);
-    // quickSortLast(arr, 0, n - 1);
-
     printf("Quick Sorted Array: ");
     for (int i = 0; i < n; i++)
         printf("%d ", A[i]);
